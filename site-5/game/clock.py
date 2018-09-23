@@ -5,21 +5,18 @@ HOUR = 0.04166666666
 
 
 class GameClock:
+    """Base class for the in-game clock.
+
+    GameClock uses an internal decimal (_value) to track the in-game time. Anything to the left of the decimal point
+    represents the # of days since January 1st, 1900; anything to the right is the fraction of time that has passed
+    during the current day.
+    """
 
     def __init__(self, date_and_time=0.0):
-        self._date_and_time = date_and_time
+        self._value = date_and_time
 
     def advance(self, length=1.0):
-        self._date_and_time += length
-
-    def advance_by_minute(self, minutes=1):
-        self.advance(MINUTE * minutes)
-
-    def advance_by_hour(self, hours=1):
-        self.advance(HOUR * hours)
-
-    def advance_by_day(self, days=1):
-        self.advance(days)
+        self._value += length
 
     @property
     def date_and_time(self):
