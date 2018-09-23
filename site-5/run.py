@@ -1,6 +1,6 @@
-import gui
+import game
 
-app = gui.app
+app = game.app
 
 
 app.run()

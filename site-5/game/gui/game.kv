@@ -16,8 +16,8 @@
 
 <StartScreen@MainScreen>:
     red: 0.0
-    green: 0.0
-    blue: 0.1
+    green: 0.1
+    blue: 0.0
 
     name: "start_screen"
     AnchorLayout:
@@ -26,7 +26,7 @@
             orientation: "vertical"
             Button:
                 text: "Start"
-                on_press: root.manager.current = "game_screen"
+                on_press: app.new_game()
             Button:
                 text: "Quit"
                 on_press: app.quit()
@@ -35,8 +35,8 @@
 
 <GameScreen@MainScreen>
     red: 0.0
-    green: 0.0
-    blue: 0.3
+    green: 0.2
+    blue: 0.1
     alpha: 1.0
 
     name: "game_screen"
