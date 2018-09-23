@@ -1,0 +1,51 @@
+#: kivy 1.10.0
+
+<MainScreen@Screen>:
+    red: 0.0
+    green: 0.0
+    blue: 0.0
+    alpha: 1.0
+
+    canvas.before:
+        Color:
+            rgba: root.red, root.green, root.blue, root.alpha
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+
+<StartScreen@MainScreen>:
+    red: 0.0
+    green: 0.0
+    blue: 0.1
+
+    name: "start_screen"
+    AnchorLayout:
+        BoxLayout:
+            size_hint: 0.4, 0.5
+            orientation: "vertical"
+            Button:
+                text: "Start"
+                on_press: root.manager.current = "game_screen"
+            Button:
+                text: "Quit"
+                on_press: app.quit()
+
+
+
+<GameScreen@MainScreen>
+    red: 0.0
+    green: 0.0
+    blue: 0.3
+    alpha: 1.0
+
+    name: "game_screen"
+    on_enter: print("game start!")
+
+
+<MainWindow>:
+    StartScreen:
+    GameScreen:
+
+
+
