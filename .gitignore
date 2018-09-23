@@ -109,3 +109,7 @@ pyvenv.cfg
 
 #PyCharm
 .idea/
+
+#Kivy
+share/
+pip-selfcheck.json
