@@ -3,7 +3,7 @@ from kivy.uix.screenmanager import ScreenManager
 from kivy.clock import Clock
 from ..session import Session
 
-INTERVAL = 0.05
+INTERVAL = 0.5
 
 
 class GameApp(App):

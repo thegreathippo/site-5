@@ -13,6 +13,21 @@
             pos: self.pos
             size: self.size
 
+<ConsoleLabel@Label>
+    red: 0.0
+    green: 0.0
+    blue: 0.0
+    alpha: 1.0
+
+    canvas.before:
+        Color:
+            rgba: root.red, root.green, root.blue, root.alpha
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    font_name: "Nouveau_IBM"
+
 
 <StartScreen@MainScreen>:
     red: 0.0
@@ -48,7 +63,7 @@
             size_hint_y: 0.1
             size_hint_x: 0.5
 
-            Label:
+            ConsoleLabel:
                 text_size: self.size
                 valign: "top"
                 id: lbl_time

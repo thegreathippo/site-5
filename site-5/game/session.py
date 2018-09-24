@@ -1,7 +1,7 @@
 from . import clock
 
 
-INTERVAL = 30
+INTERVAL = 1
 
 
 class Session:
