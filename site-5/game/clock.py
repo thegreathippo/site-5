@@ -1,10 +1,5 @@
 from collections import namedtuple
 
-DAY = 1440
-HOUR = 60
-YEAR = 525600
-LEAP_YEAR = 527040
-
 DAY_OF_MONTH = \
     {1: 31,
      2: 28,
