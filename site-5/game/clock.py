@@ -62,8 +62,8 @@ class GameClock:
     def __init__(self, days=0):
         self._timer = _Clock(days)
 
-    def tick(self):
-        self._timer.advance()
+    def tick(self, minutes=1):
+        self._timer.advance(minutes)
 
     @property
     def date_and_time(self):
@@ -155,8 +155,8 @@ class _Clock:
         self.hour = 0
         self.day, self.month, self.year = calculate_date(days)
 
-    def advance(self):
-        self.minute += 1
+    def advance(self, minutes):
+        self.minute += minutes
         self._update()
 
     def _update(self):
