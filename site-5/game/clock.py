@@ -72,52 +72,83 @@ class GameClock:
 
     @property
     def date_and_time(self):
+        """Return a namedtuple with the following fields:
+
+            year (int): Current year.
+            month (int): Current month.
+            day (int): Current day-of-the-month.
+            hour (int): Current hour-of-the-day.
+            minute (int): Current minute-of-the-hour.
+
+        """
+
         clock_tuple = namedtuple("date_and_time", ["year", "month", "day", "hour", "minute"])
         date_and_time = clock_tuple(self.year, self.month, self.day, self.hour, self.minute)
         return date_and_time
 
     @property
     def date(self):
+        """Return a namedtuple with the following fields:
+
+            year (int): Current year.
+            month (int): Current month.
+            day (int): Current day-of-the-month.
+
+        """
         date_tuple = namedtuple("date", ["year", "month", "day"])
         date = date_tuple(self.year, self.named_month, self.named_day)
         return date
 
     @property
     def time(self):
+        """Return a namedtuple with the following fields:
+
+            hour (int): Current hour-of-the-day.
+            minute (int): Current minute-of-the-hour.
+
+        """
         time_tuple = namedtuple("time", ["hour", "minute"])
         time = time_tuple(self.hour, self.minute)
         return time
 
     @property
     def year(self):
+        """Return the current year (int)."""
         return self._timer.year
 
     @property
     def month(self):
+        """Return the current month (int)."""
         return self._timer.month
 
     @property
     def day(self):
+        """Return the current day-of-the-month (int)."""
         return self._timer.day
 
     @property
     def hour(self):
+        """Return the current hour-of-the-day (int)."""
         return self._timer.hour
 
     @property
     def minute(self):
+        """Return the current minute-of-the-hour (int)."""
         return self._timer.minute
 
     @property
     def named_day(self):
+        """Return the current day-of-the-week (str)."""
         return self._timer.named_day
 
     @property
     def named_month(self):
+        """Return the current month (str)."""
         return self._timer.named_month
 
     @property
     def total_days(self):
+        """Return the current total number of days that have passed (int)."""
         return self._timer.days
 
 
